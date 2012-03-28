@@ -1,0 +1,9 @@
+{
+  "charset": "utf8",
+  "dbname": "mydb",
+  "host": "172.16.1.35",
+  "pass": "testvitess",
+  "port": 3306,
+  "uname": "testvitess", 
+  "unix_socket": ""
+}
