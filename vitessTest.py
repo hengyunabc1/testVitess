@@ -17,13 +17,13 @@ if __name__ == '__main__':
     totalInsertSize = 100000
     processNum = 10 
 
-    dbtest.mutilProcessInsert(getMySQLdbConn, totalInsertSize, processNum) 
-    dbtest.mutilProcessInsert(getVitessConn, totalInsertSize, processNum)
+    dbtest.multiProcessInsert(getMySQLdbConn, totalInsertSize, processNum) 
+    dbtest.multiProcessInsert(getVitessConn, totalInsertSize, processNum)
     totalSelectSize = 100000
     #the slect range
     start = 0
     end = totalInsertSize 
-    dbtest.mutilProcessSelect(getMySQLdbConn, start, end, totalSelectSize, processNum) 
-    dbtest.mutilProcessSelect(getVitessConn, start, end, totalSelectSize, processNum) 
+    dbtest.multiProcessSelect(getMySQLdbConn, start, end, totalSelectSize, processNum) 
+    dbtest.multiProcessSelect(getVitessConn, start, end, totalSelectSize, processNum) 
     
 

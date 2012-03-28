@@ -19,7 +19,7 @@ def insert(conn, size):
         conn.commit()
         i = i + 1
 
-def mutilProcessInsert(getConnFunc, totalSize, processNum):
+def multiProcessInsert(getConnFunc, totalSize, processNum):
     i = 0
     insertSize = totalSize/processNum
     print 'per Process insertSize:', insertSize
@@ -37,10 +37,10 @@ def mutilProcessInsert(getConnFunc, totalSize, processNum):
     for p in processList:
         p.join()
 
-    print 'mutilProcessInsert,totalsize:', totalSize, ',processNum:', processNum
+    print 'multiProcessInsert,totalsize:', totalSize, ',processNum:', processNum
     print 'size/s:', totalSize/float(getSeconds(startTime))
 
-def mutilProcessSelect(getConnFunc, start, end, totalSelectSize, processNum):
+def multiProcessSelect(getConnFunc, start, end, totalSelectSize, processNum):
     selectSize = totalSelectSize/processNum
     processList = list()
     i = 0
@@ -57,7 +57,7 @@ def mutilProcessSelect(getConnFunc, start, end, totalSelectSize, processNum):
     for p in processList:
         p.join()
 
-    print 'mutilProcessSelect,totalsize:', totalSelectSize, ',processNum:', processNum
+    print 'multiProcessSelect,totalsize:', totalSelectSize, ',processNum:', processNum
     print 'size/s:', totalSelectSize/float(getSeconds(startTime))
 
         
